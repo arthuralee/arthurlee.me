@@ -16,6 +16,7 @@
   font-size: 75px;
   display: inline-block;
   color: #b5b5b5;
+  transition: color 0.2s;
 }
 .socialicon.big {
   font-size: 150px;
@@ -192,6 +193,12 @@ section.content h1 {
   font-size: 1.5em;
   margin-bottom: 0.8em;
 }
+@media(max-width:767px){
+  #section-about p {
+    font-size: 1em;
+  }
+}
+
 #section-about p a {
   font-style: normal;
   font-weight: 400;
@@ -204,6 +211,10 @@ section.content h1 {
 /* Portfolio */
 #section-portfolio {
   background-color: white;
+}
+#section-portfolio .entry {
+  padding: 10px;
+  height: 300px;
 }
 
 /* Contact */

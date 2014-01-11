@@ -4,7 +4,7 @@ app.resizeTimer = null;
 app.windowResize = function() {
   var viewportHeight = $(window).height();
 
-  if (viewportHeight < 750) viewportHeight = 750;
+  if (viewportHeight < 600) viewportHeight = 600;
 
   $('.viewport-height').css({
     height: viewportHeight + 1 + 'px'

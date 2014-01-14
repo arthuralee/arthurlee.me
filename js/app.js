@@ -4,7 +4,7 @@ app.resizeTimer = null;
 app.windowResize = function() {
   var viewportHeight = $(window).height();
 
-  if (viewportHeight < 600) viewportHeight = 600;
+  if (viewportHeight < 650) viewportHeight = 650;
 
   $('.viewport-height').css({
     height: viewportHeight + 1 + 'px'
@@ -42,8 +42,7 @@ app.navigator.navigate = function(section, offset) {
       Events
 =========================== */
 $(document).ready(function() {
-  app.locManager.currentLoc = 'yvr';
-  app.locManager.setLocation(app.locManager.currentLoc);
+  app.locManager.setLocation('yvr');
   app.windowResize();
 });
 

@@ -42,7 +42,9 @@ app.navigator.navigate = function(section, offset) {
       Events
 =========================== */
 $(document).ready(function() {
-  app.locManager.setLocation('yvr');
+  $.get('http://arthurlee.me/loc', function(loc) {
+    app.locManager.setLocation(loc);
+  });
   app.windowResize();
 });
 

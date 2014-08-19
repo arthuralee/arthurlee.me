@@ -11,7 +11,7 @@
   height: 75px;
   border-radius: 50%;
   line-height: 2em;
-  margin: 0 0.1em;
+  margin: 0 0.05em;
 }
 .socialicon.big {
   font-size: 50px;
@@ -24,6 +24,14 @@
   width: 50px;
   height: 50px;
   line-height: 1.95em;
+}
+@media(max-width:767px){
+  .socialicon.big {
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    line-height: 1.95em;
+  }
 }
 .socialicon:hover {
   background-color: #a3a3a3;
@@ -86,10 +94,6 @@
 
 .card h1, .card h2 {
   font-family: 'Oswald', sans-serif;
-}
-
-.card h1 {
-
 }
 
 .card h2 {
@@ -196,6 +200,12 @@ section.content h1 {
   color: #21ABBE;
   margin-bottom: 0.75em;
   text-align: center;
+}
+
+@media(max-width:767px){
+  section.content h1 {
+    font-size: 2em;
+  }
 }
 
 /* About */

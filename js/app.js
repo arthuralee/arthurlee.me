@@ -53,15 +53,6 @@ $(window).resize(function() {
   app.resizeTimer = setTimeout(app.windowResize, 50);
 });
 
-$('a').click(function(e) {
-  var href = $(this).attr('href');
-  if (href[0] !== '#') return;
-  
-  e.preventDefault();
-  app.navigator.navigate(href);
-  window.location.hash = href;
-});
-
 function windowHeight() {
   return $(window).height();
 }
@@ -78,13 +69,13 @@ $('.navbar').affix({
 =========================== */
 app.buttons = {
   'down': function() {
-    app.navigator.navigate('content');
+    app.navigator.navigate('#section-about');
   }
 };
 
 for (btn in app.buttons) {
   $('.jsbtn-' + btn).click(function(e) {
     e.preventDefault();
-    app.buttons[btn](e); 
+    app.buttons[btn](e);
   });
 }

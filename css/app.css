@@ -1,41 +1,35 @@
 /* ============================
     Social icon font
 =============================== */
-@font-face {
-  font-family: 'socialico';
-  src: url('../fonts/socialico-webfont.eot');
-  src: url('../fonts/socialico-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/socialico-webfont.woff') format('woff'),
-       url('../fonts/socialico-webfont.ttf') format('truetype'),
-       url('../fonts/socialico-webfont.svg#socialicoregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
 .socialicon {
-  font-family: 'socialico';
-  font-size: 75px;
+  font-size: 35px;
   display: inline-block;
-  color: #b5b5b5;
-  transition: color 0.2s;
+  color: #E6E6E6;
+  transition: background-color 0.2s;
+  background-color: #C7C7C7;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  line-height: 2em;
+  margin: 0 0.1em;
 }
 .socialicon.big {
-  font-size: 150px;
-  margin: -50px 0;
-  color: #c9c9c9;
+  font-size: 50px;
+  width: 100px;
+  height: 100px;
+  line-height: 1.95em;
+}
+.socialicon.small {
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  line-height: 1.95em;
 }
 .socialicon:hover {
-  color: #a3a3a3;
+  background-color: #a3a3a3;
+  color: #e6e6e6;
   text-decoration: none;
 }
-.socialicon:active { color: #9a9a9a; }
-.socialicon.socialicon-linkedin:before { content:'i'; }
-.socialicon.socialicon-facebook:before { content:'f'; }
-.socialicon.socialicon-behance:before { content:'e'; }
-.socialicon.socialicon-tumblr:before { content:'o'; }
-.socialicon.socialicon-flickr:before { content:'n'; }
-.socialicon.socialicon-dribbble:before { content:'d'; }
-.socialicon.socialicon-foursquare:before { content:'/'; }
-.socialicon.socialicon-message:before { content:'?'; }
 
 /* ============================
     Container
@@ -102,6 +96,10 @@
   text-transform: uppercase;
   font-size: 18px;
   color: #21ABBE;
+}
+
+.card .social-links {
+  margin-top: 2em;
 }
 
 .profile-picture {
@@ -196,7 +194,7 @@ section.content h1 {
   font-size: 60px;
   text-transform: uppercase;
   color: #21ABBE;
-  margin-bottom: 1.25em;
+  margin-bottom: 0.75em;
   text-align: center;
 }
 

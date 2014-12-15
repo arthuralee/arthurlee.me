@@ -4,14 +4,7 @@
 body {
   background-color: #f3f3f3;
   padding-top: 50px;
-}
-/* ============================
-    Container
-=============================== */
-.container-full {
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 15px;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Card */
@@ -96,16 +89,10 @@ section.content h1 {
 =============================== */
 
 footer {
-  height: 200px;
-}
-
-footer p {
-  display: inline;
-  color: #f0f0f0;
-  text-transform: uppercase;
-  font-weight: 100;
-  font-family: 'Roboto', sans-serif;
-  background-color: rgba(255, 255, 255, 0.2);
+  height: 90px;
   padding: 5px;
+  color: #ccc;
+  font-weight: 100;
   font-size: 13px;
+  text-align: center;
 }

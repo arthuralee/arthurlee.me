@@ -8,10 +8,10 @@ body {
 }
 
 ::selection {
-  background: #91F2F6; /* Safari */
+  background: #F7CCCC; /* Safari */
   }
 ::-moz-selection {
-  background: #91F2F6; /* Firefox */
+  background: #F7CCCC; /* Firefox */
 }
 
 /* Card */

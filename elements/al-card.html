@@ -1,5 +1,4 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="al-socialbtn.html">
 
 <polymer-element name="al-card" noscript>
   <template>
@@ -15,19 +14,6 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     }
         
-    .profile-picture {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 35%;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      background-image: url(/img/profile.jpg);
-      background-size: cover;
-      background-position: center;
-    }
-    
     .content {
       box-sizing: border-box;
       width: 65%;
@@ -52,22 +38,9 @@
       margin: 0 0 1em;
     }
     
-    .social-links {
-      margin-top: 2em;
-    }
-
-    
     </style>
 
-    <div class="profile-picture"></div>
-    <div class="content">
-      <h1>Arthur Lee</h1>
-      <h2>Designer &amp; Developer</h2>
-      <div class="social-links">
-        <al-socialbtn href="http://www.google.com/recaptcha/mailhide/d?k=01OWkW9eUwqxP23Bxfd4o8pw==&c=FVysm5b2s6wu3dgCw4p4R4PNpxPDYSSb9SWUs-ltErQ=" icon="fa-envelope-o"></al-socialbtn>
-        <al-socialbtn href="http://www.linkedin.com/in/arthuralee" icon="fa-linkedin"></al-socialbtn>
-        <al-socialbtn href="https://github.com/arthuralee" icon="fa-github"></al-socialbtn>
-      </div>
-    </div>
+    <content></content>
+    
   </template>
 </polymer-element>

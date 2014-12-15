@@ -7,8 +7,15 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+::selection {
+  background: #91F2F6; /* Safari */
+  }
+::-moz-selection {
+  background: #91F2F6; /* Firefox */
+}
+
 /* Card */
-#section-home al-card {
+#section-home .center {
   margin: 50px auto;
 }
 
@@ -23,12 +30,6 @@ body {
   font-weight: 300;
   font-size: 1.5em;
   color: #707070;
-}
-section.content ::selection {
-  background: #91F2F6; /* Safari */
-  }
-section.content ::-moz-selection {
-  background: #91F2F6; /* Firefox */
 }
 section.content h1 {
   font-family: 'Oswald', sans-serif;

@@ -1,0 +1,24 @@
+{
+  "name": "arthurlee.me",
+  "version": "1.0.1",
+  "homepage": "https://github.com/arthuralee/arthurlee.me",
+  "authors": [
+    "Arthur Lee <arthur@arthurlee.me>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~0.5.2",
+    "normalize.css": "~3.0.2"
+  }
+}

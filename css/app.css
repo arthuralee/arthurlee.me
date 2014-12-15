@@ -1,44 +1,10 @@
 /* ============================
-    Social icon font
+    Global stuff
 =============================== */
-.socialicon {
-  font-size: 35px;
-  display: inline-block;
-  color: #E6E6E6;
-  transition: background-color 0.2s;
-  background-color: #C7C7C7;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  line-height: 2em;
-  margin: 0 0.05em;
+body {
+  background-color: #f3f3f3;
+  padding-top: 50px;
 }
-.socialicon.big {
-  font-size: 50px;
-  width: 100px;
-  height: 100px;
-  line-height: 1.95em;
-}
-.socialicon.small {
-  font-size: 24px;
-  width: 50px;
-  height: 50px;
-  line-height: 1.95em;
-}
-@media(max-width:767px){
-  .socialicon.big {
-    font-size: 24px;
-    width: 50px;
-    height: 50px;
-    line-height: 1.95em;
-  }
-}
-.socialicon:hover {
-  background-color: #a3a3a3;
-  color: #e6e6e6;
-  text-decoration: none;
-}
-
 /* ============================
     Container
 =============================== */
@@ -48,134 +14,10 @@
   padding: 0 15px;
 }
 
-/* ============================
-    Location banner image
-=============================== */
-
-/* Location banner */
-.loc-banner, .loc-banner-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-.loc-banner {
-  z-index:-5;
-  background-position: center;
-  background-size: cover;
-}
-.loc-banner-overlay {
-  z-index:-1;
-  height: 100%;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAI0lEQVQIW2NkwATGjGhixkD+WWRBsABIEUwQLgATRBEACQIAr8MEOZtA/yIAAAAASUVORK5CYII=) repeat;
-}
-
-.viewport-height {
-  transition: height 0.1s;
-}
-
-.banner-overlay {
-  height: 100%;
-  position: relative;
-}
-
 /* Card */
-.card {
-  background-color: rgba(255,255,255,0.95);
-  width: 300px;
-  height: 375px;
-  margin: 100px auto;
-  text-align: center;
-  padding: 30px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#section-home al-card {
+  margin: 50px auto;
 }
-
-.card h1, .card h2 {
-  font-family: 'Oswald', sans-serif;
-}
-
-.card h2 {
-  text-transform: uppercase;
-  font-size: 18px;
-  color: #21ABBE;
-}
-
-.card .social-links {
-  margin-top: 2em;
-}
-
-.profile-picture {
-  width: 120px;
-  overflow: hidden;
-  border-radius: 100%;
-  margin: 0 auto;
-}
-
-.profile-picture img {
-  height: 100%;
-  width: 100%;
-}
-
-/* Down button */
-.jsbtn-down {
-  width: 75px;
-  height: 75px;
-  display: block;
-  position: absolute;
-  bottom: 10%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  text-align: center;
-  line-height: 7em;
-}
-.jsbtn-down:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-}
-.jsbtn-down i {
-  color: rgba(255, 255, 255, 0.4);
-}
-.jsbtn-down:hover i {
-  color: rgba(255, 255, 255, 0.3)
-}
-
-@media(max-width:767px){
-  .jsbtn-down {
-    position: static;
-  }
-}
-
-/* Location desc */
-.loc-info {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  color: #F0F0F0;
-  text-transform: uppercase;
-  margin: 20px;
-  font-weight: 100;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 5px;
-  font-size: 1.1em;
-  font-family: 'Roboto', sans-serif;
-}
-@media(max-width:767px){
-  .loc-info {
-    position: static;
-  }
-}
-
-.loc-info em {
-  font-style: normal;
-  font-weight: 300;
-}
-
 
 /* ============================
          Main content

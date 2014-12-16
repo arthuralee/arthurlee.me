@@ -7,6 +7,11 @@
   <template>
     <style>
     
+    :host {
+      width: 510px;
+      height: 310px;
+    }
+
     core-image {
       background-color: #ddd;
       position: absolute;
@@ -24,6 +29,16 @@
       height: 100%;
       position: absolute;
       right: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: -webkit-flex;
+      -webkit-justify-content: center;
+      -webkit-align-items: center;
+    }
+
+    .content-inner {
       padding: 40px 0;
       text-align: center;    
     }
@@ -53,12 +68,14 @@
 
     <core-image src="/img/profile.jpg" sizing="cover" preload fade></core-image>
     <div class="content">
-      <h1>Arthur Lee</h1>
-      <h2>Designer &amp; Developer</h2>
-      <div class="social-links">
-        <al-socialbtn href="http://www.google.com/recaptcha/mailhide/d?k=01OWkW9eUwqxP23Bxfd4o8pw==&c=FVysm5b2s6wu3dgCw4p4R4PNpxPDYSSb9SWUs-ltErQ=" icon="fa-envelope-o"></al-socialbtn>
-        <al-socialbtn href="http://www.linkedin.com/in/arthuralee" icon="fa-linkedin"></al-socialbtn>
-        <al-socialbtn href="https://github.com/arthuralee" icon="fa-github"></al-socialbtn>
+      <div class="content-inner">
+        <h1>Arthur Lee</h1>
+        <h2>Designer &amp; Developer</h2>
+        <div class="social-links">
+          <al-socialbtn href="http://www.google.com/recaptcha/mailhide/d?k=01OWkW9eUwqxP23Bxfd4o8pw==&c=FVysm5b2s6wu3dgCw4p4R4PNpxPDYSSb9SWUs-ltErQ=" icon="fa-envelope-o"></al-socialbtn>
+          <al-socialbtn href="http://www.linkedin.com/in/arthuralee" icon="fa-linkedin"></al-socialbtn>
+          <al-socialbtn href="https://github.com/arthuralee" icon="fa-github"></al-socialbtn>
+        </div>
       </div>
     </div>
   </template>

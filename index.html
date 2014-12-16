@@ -2,105 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=530px, initial-scale=1.0">
 
-  <title>Arthur Lee - Designer & Developer</title>
+  <title>Arthur Lee</title>
 
-  <link rel="shortcut icon" href="img/favicon.png" />
-  <link href="//fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/app.css">
+  <link href="img/favicon.png" rel="shortcut icon"/>
+  <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+  <link href="bower_components/normalize.css/normalize.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
+
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="elements/al-card-name.html">
+  <link rel="import" href="elements/al-card-icon.html">
+  <link rel="import" href="elements/al-card-image.html">
+
 </head>
-<body>
+<body unresolved>
 
-  <!-- Location banner image -->
-  <div class="loc-banner viewport-height"></div>
-  <div class="loc-banner-overlay viewport-height"></div>
+  <section id="section-home">
 
-  <!-- Main content -->
-  <div class="container-full">
+    <al-card-name class="center"></al-card-name>
+    
+    <al-card-icon class="center" img="img/pinterest.png">
+      <p>I will be joining <a href="http://www.pinterest.com/" target="_blank">Pinterest</a> as a <em>Software Engineer</em> in 2015</p>
+    </al-card-icon>
 
-    <!-- Banner text overlay -->
-    <section id="section-home" class="row banner-overlay viewport-height">
-      <div class="card">
-        <div class="profile-picture">
-          <img src="img/profile.jpg" />
-        </div>
-        <h1>Arthur Lee</h1>
-        <h2>Designer &amp; Developer</h2>
-        <div class="social-links">
-          <a href="http://www.google.com/recaptcha/mailhide/d?k=01OWkW9eUwqxP23Bxfd4o8pw==&c=FVysm5b2s6wu3dgCw4p4R4PNpxPDYSSb9SWUs-ltErQ=" target="_blank" class="socialicon small">
-            <i class="fa fa-envelope-o"></i>
-          </a>
-          <a href="http://www.linkedin.com/in/arthuralee" target="_blank" class="socialicon small">
-            <i class="fa fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/arthuralee" target="_blank" class="socialicon small">
-            <i class="fa fa-github"></i>
-          </a>
-        </div>
-      </div>
-      <div class="loc-info">Arthur is currently in <em id="loc-desc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em></div>
-      <a href="#section-about" class="jsbtn jsbtn-down">
-        <i class="fa fa-angle-down fa-3x"></i>
-      </a>
-    </section>
+    <al-card-image class="center" img="img/cmu.png">
+    <p>I study <a href="http://hcii.cmu.edu/" target="_blank">HCI</a>, <a href="http://ece.cmu.edu/" target="_blank">ECE</a> and <a href="http://cs.cmu.edu/" target="_blank">CS</a> at <a href="http://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>.</p>
+    </al-card-image>
+    
+    <al-card-icon class="center" img="img/zazzle.png">
+      <p>I worked in the <em>UI Engineering</em> team at <a href="http://www.zazzle.com/" target="_blank">Zazzle</a> last summer</p>
+    </al-card-icon>
 
-    <!-- Main content -->
-    <section id="section-about" class="row content">
-      <div class="col-xs-12">
-        <h1>Hi, I'm Arthur.</h1>
-        <p>I'm a designer &amp; developer. I love engineering interactive and innovative experiences for users on web and mobile devices.</p>
-        <p>I study <strong>Human-Computer Interaction</strong>, <strong>Electrical &amp; Computer Engineering</strong> and <strong>Computer Science</strong> @ <a href="http://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>.</p>
-        <p>I worked in the <strong>UI Engineering</strong> team @ <a href="http://www.zazzle.com/" target="_blank">Zazzle</a> this summer.</p>
-      </div>
-    </section>
+  </section>
 
-    <!--
-    <section id="section-portfolio" class="row content">
-      <div class="col-md-4 entry">
-        Entry 1
-      </div>
-      <div class="col-md-4 entry">Entry 2</div>
-      <div class="col-md-4 entry">Entry 3</div>
-    </section>
-    -->
-
-    <section id="section-contact" class="row content">
-      <h1>Get in touch</h1>
-      <a href="http://www.google.com/recaptcha/mailhide/d?k=01OWkW9eUwqxP23Bxfd4o8pw==&c=FVysm5b2s6wu3dgCw4p4R4PNpxPDYSSb9SWUs-ltErQ=" target="_blank" class="socialicon big">
-        <i class="fa fa-envelope-o"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/arthuralee" target="_blank" class="socialicon big">
-        <i class="fa fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/arthuralee" target="_blank" class="socialicon big">
-        <i class="fa fa-github"></i>
-      </a>
-    </section>
-
-    <!-- Footer -->
-    <footer class="row content">
-      <div class="col-md-12">
-      <p>Copyright &copy; 2014 Arthur Lee. All Rights Reserved.</p>
-    </footer>
-  </div>
-
-  <script src="js/jquery-1.10.2.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/app.js"></script>
+  <!-- Footer -->
+  <footer>
+    <p>Copyright &copy; 2014 Arthur Lee. All Rights Reserved.</p>
+  </footer>
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
+    /*
     ga('create', 'UA-4113512-8', 'arthurlee.me');
     ga('send', 'pageview');
+    */
   </script>
 
 </body>

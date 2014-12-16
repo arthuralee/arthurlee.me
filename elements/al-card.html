@@ -1,0 +1,41 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="al-card" noscript>
+  <template>
+    <style>
+    :host {
+      font-family: 'Roboto', sans-serif;
+      display: block;
+      position: relative;
+      background-color: #fff;
+      width: 450px;
+      height: 275px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      box-sizing: border-box;
+    }
+        
+    :host::shadow ::content p {
+      font-weight: 100;
+    }
+
+    :host::shadow ::content em {
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    :host::shadow ::content a {
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 400;
+      color: #A5394F;
+    }
+    
+    :host::shadow ::content a:hover {
+      color: #CB5858;
+      text-decoration: underline;
+    }
+    </style>
+
+  </template>
+</polymer-element>

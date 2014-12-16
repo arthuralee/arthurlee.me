@@ -1,0 +1,49 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-image/core-image.html">
+<link rel="import" href="al-card.html">
+
+<polymer-element name="al-card-image" extends="al-card" attributes="img" noscript>
+  <template>
+    <style>
+    
+    core-image {
+      background-color: #ddd;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 35%;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    .content {
+      box-sizing: border-box;
+      width: 65%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      padding: 0 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: -webkit-flex;
+      -webkit-justify-items: center;
+      -webkit-align-items: center;
+    }
+    
+    .content ::content p {
+      font-size: 36px;
+    }
+
+    </style>
+
+    <shadow></shadow>
+
+    <core-image src="{{img}}" sizing="cover" preload fade></core-image>
+    <div class="content">
+      <content select="p"></content>
+    </div>
+  </template>
+
+</polymer-element>

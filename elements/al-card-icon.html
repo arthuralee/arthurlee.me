@@ -2,12 +2,12 @@
 <link rel="import" href="al-card.html">
 <link rel="import" href="al-socialbtn.html">
 
-<polymer-element name="al-card-icon" extends="al-card" attributes="src" noscript>
+<polymer-element name="al-card-icon" extends="al-card" attributes="img" noscript>
   <template>
     <style>
 
     :host {
-      padding: 1.5em 2em;
+      padding: 25px 20px;
     }
     .icon {
       margin: auto;
@@ -21,17 +21,18 @@
     .content {
       box-sizing: border-box;
       text-align: center;
-      font-size: 1.75em;
+      font-size: 28px;
       font-weight: 100;
       color: #444;
       height: 150px;
+
       display: flex;
       justify-items: center;
       align-items: center;
-    }
-    .content ::content em {
-      font-weight: 300;
-      font-style: normal;
+
+      display: -webkit-flex;
+      -webkit-justify-items: center;
+      -webkit-align-items: center;
     }
     ::content p {
       margin: 0;
@@ -40,7 +41,7 @@
 
     <shadow></shadow>
     <div class="icon">
-      <img src="{{src}}" />
+      <img src="{{img}}" />
     </div>
     <div class="content">
       <content select="p"></content>

@@ -2,38 +2,30 @@
 var React = require('react');
 var Card = require('./Card.js');
 var ScrollLoader = require('./ScrollLoader.js');
+var Footer = require('./Footer.js');
 
 var App = React.createClass({displayName: "App",
   getInitialState: function() {
     return {
-      currentCard: -1,
       cards: [
-        React.createElement(Card.Name, {key: "0", num: "0", cardClicked: this.cardClicked}),
-        React.createElement(Card.Icon, {img: "img/pinterest.png", key: "1", num: "1", cardClicked: this.cardClicked}, 
+        React.createElement(Card.Name, {key: "0", loadOrder: 0}),
+        React.createElement(Card.Icon, {img: "img/pinterest.png", key: "1", loadOrder: 1}, 
           React.createElement("p", null, "I will be joining ", React.createElement("a", {href: "http://www.pinterest.com/", target: "_blank"}, "Pinterest"), " as a ", React.createElement("em", null, "Software Engineer"), " in 2015")
         ),
-        React.createElement(Card.Image, {img: "img/cmu.png", key: "2", num: "2", cardClicked: this.cardClicked}, 
+        React.createElement(Card.Image, {img: "img/cmu.png", key: "2", loadOrder: 2}, 
           React.createElement("p", null, "I study ", React.createElement("a", {href: "http://hcii.cmu.edu/", target: "_blank"}, "HCI"), ", ", React.createElement("a", {href: "http://ece.cmu.edu/", target: "_blank"}, "ECE"), " and ", React.createElement("a", {href: "http://cs.cmu.edu/", target: "_blank"}, "CS"), " at ", React.createElement("a", {href: "http://www.cmu.edu/", target: "_blank"}, "Carnegie Mellon University"), ".")
         ),
-        React.createElement(Card.Icon, {img: "img/zazzle.png", key: "3", num: "3", cardClicked: this.cardClicked}, 
+        React.createElement(Card.Icon, {img: "img/zazzle.png", key: "3", loadOrder: 3}, 
           React.createElement("p", null, "I worked in the ", React.createElement("em", null, "UI Engineering"), " team at ", React.createElement("a", {href: "http://www.zazzle.com/", target: "_blank"}, "Zazzle"), " last summer")
         )
       ]
     };
   },
-  cardClicked: function(i) {
-    console.log(i);
-    this.setState({
-      currentCard: i
-    })
-  },
   render: function() {
     return React.createElement("div", null, 
       this.state.cards, 
       React.createElement(ScrollLoader, {loadAction: this.loadMoreCards}), 
-      React.createElement("div", {className: "footer"}, 
-        React.createElement("p", null, "Copyright © ", (new Date()).getFullYear(), " Arthur Lee. All Rights Reserved.")
-      )
+      React.createElement(Footer, null)
     );
   },
   loadMoreCards: function(cb) {
@@ -44,14 +36,14 @@ var App = React.createClass({displayName: "App",
       ]);
       this.setState({cards: newCards});
       cb();
-    }.bind(this), 2000);
+    }.bind(this), 1000);
   }
 });
 
 React.render(React.createElement(App, null), document.querySelector('#main'));
 
 
-},{"./Card.js":149,"./ScrollLoader.js":151,"react":148}],2:[function(require,module,exports){
+},{"./Card.js":149,"./Footer.js":150,"./ScrollLoader.js":152,"react":148}],2:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -18345,10 +18337,21 @@ var SocialBtn = require('./SocialBtn.js');
 
 module.exports = (function() {
   var Card = React.createClass({displayName: "Card",
+    getDefaultProps: function() {
+      return {
+        loadOrder: 0
+      };
+    },
     componentWillMount: function() {
+      // Inherit styles
       for (prop in this.props.style) {
         this.style[prop] = this.props.style[prop];
       }
+
+      // Calculate animation delay
+      var animDuration = ((0.7 + this.props.loadOrder/4) + "s");
+      this.style.WebkitAnimationDuration = animDuration;
+      this.style.MozAnimationDuration = animDuration;
     },
     render: function() {
       return React.createElement("div", {
@@ -18368,13 +18371,15 @@ module.exports = (function() {
       height: 275,
       borderRadius: 5,
       boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)',
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
+      WebkitAnimation: 'fadeUpIn',
+      MozAnimation: 'fadeUpIn'
     }
   });
 
   Card.Name = React.createClass({displayName: "Name",
     render: function() {
-      return React.createElement(Card, null, 
+      return React.createElement(Card, {loadOrder: this.props.loadOrder}, 
         React.createElement(ImageView, {style: this.style.img, src: "/img/profile.jpg"}), 
         React.createElement("div", {style: this.style.content}, 
           React.createElement("div", {style: this.style.contentInner}, 
@@ -18435,7 +18440,7 @@ module.exports = (function() {
 
   Card.Image = React.createClass({displayName: "Image",
     render: function() {
-      return React.createElement(Card, {handleClick: this.props.handleClick}, 
+      return React.createElement(Card, {handleClick: this.props.handleClick, loadOrder: this.props.loadOrder}, 
           React.createElement(ImageView, {style: this.style.img, src: this.props.img}), 
           React.createElement("div", {style: this.style.content}, this.props.children)
         );
@@ -18469,7 +18474,7 @@ module.exports = (function() {
 
   Card.Icon = React.createClass({displayName: "Icon",
     render: function() {
-      return React.createElement(Card, {style: this.style.host}, 
+      return React.createElement(Card, {style: this.style.host, loadOrder: this.props.loadOrder}, 
         React.createElement("div", {style: this.style.icon}, 
           React.createElement("img", {src: this.props.img, style: this.style.img})
         ), 
@@ -18510,7 +18515,32 @@ module.exports = (function() {
 })();
 
 
-},{"./ImageView.js":150,"./SocialBtn.js":152,"react":148}],150:[function(require,module,exports){
+},{"./ImageView.js":151,"./SocialBtn.js":153,"react":148}],150:[function(require,module,exports){
+var React = require('react');
+
+module.exports = (function() {
+  var Footer = React.createClass({displayName: "Footer",
+    render: function() {
+      return React.createElement("div", {style: this.style}, 
+        React.createElement("p", null, "Copyright © ", (new Date()).getFullYear(), " Arthur Lee. All Rights Reserved.")
+      );
+    },
+    style: {
+      height: 90,
+      padding: 5,
+      color: '#bbb',
+      fontWeight: 100,
+      fontSize: 13,
+      textAlign: 'center'
+    }
+  });
+
+  return Footer;
+
+})();
+
+
+},{"react":148}],151:[function(require,module,exports){
 var React = require('react');
 
 module.exports = (function() {
@@ -18554,7 +18584,7 @@ module.exports = (function() {
 })();
 
 
-},{"react":148}],151:[function(require,module,exports){
+},{"react":148}],152:[function(require,module,exports){
 const STATE_LOADED = 0;
 const STATE_LOADING = 1;
 
@@ -18563,6 +18593,11 @@ var React = require('react');
 module.exports = (function() {
 
     var ScrollLoader = React.createClass({displayName: "ScrollLoader",
+      getDefaultProps: function() {
+        return {
+          scrollThreshold: 100
+        }
+      },
       getInitialState: function() {
         return {
           state: STATE_LOADED
@@ -18599,7 +18634,7 @@ module.exports = (function() {
         var height = window.innerHeight;
         var pageHeight = document.body.offsetHeight;
 
-        if ((height + scrollPos) >= pageHeight) {
+        if ((height + scrollPos + this.props.scrollThreshold) >= pageHeight) {
           this.props.loadAction(this.resetState);
           this.setState({state: STATE_LOADING});
           this.removeListener();
@@ -18613,7 +18648,7 @@ module.exports = (function() {
         loader: {
           transition: 'transform 0.5s',
           transform: 'scale(1)',
-          color: '#777'
+          color: '#bbb'
         }
       }
     });
@@ -18623,7 +18658,7 @@ module.exports = (function() {
 })();
 
 
-},{"react":148}],152:[function(require,module,exports){
+},{"react":148}],153:[function(require,module,exports){
 var React = require('react');
 
 module.exports = (function() {

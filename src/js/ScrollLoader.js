@@ -6,6 +6,11 @@ var React = require('react');
 module.exports = (function() {
 
     var ScrollLoader = React.createClass({
+      getDefaultProps: function() {
+        return {
+          scrollThreshold: 100
+        }
+      },
       getInitialState: function() {
         return {
           state: STATE_LOADED
@@ -42,7 +47,7 @@ module.exports = (function() {
         var height = window.innerHeight;
         var pageHeight = document.body.offsetHeight;
 
-        if ((height + scrollPos) >= pageHeight) {
+        if ((height + scrollPos + this.props.scrollThreshold) >= pageHeight) {
           this.props.loadAction(this.resetState);
           this.setState({state: STATE_LOADING});
           this.removeListener();
@@ -56,7 +61,7 @@ module.exports = (function() {
         loader: {
           transition: 'transform 0.5s',
           transform: 'scale(1)',
-          color: '#777'
+          color: '#bbb'
         }
       }
     });

@@ -4,10 +4,21 @@ var SocialBtn = require('./SocialBtn.js');
 
 module.exports = (function() {
   var Card = React.createClass({
+    getDefaultProps: function() {
+      return {
+        loadOrder: 0
+      };
+    },
     componentWillMount: function() {
+      // Inherit styles
       for (prop in this.props.style) {
         this.style[prop] = this.props.style[prop];
       }
+
+      // Calculate animation delay
+      var animDuration = `${0.7 + this.props.loadOrder/4 }s`;
+      this.style.WebkitAnimationDuration = animDuration;
+      this.style.MozAnimationDuration = animDuration;
     },
     render: function() {
       return <div
@@ -27,13 +38,15 @@ module.exports = (function() {
       height: 275,
       borderRadius: 5,
       boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)',
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
+      WebkitAnimation: 'fadeUpIn',
+      MozAnimation: 'fadeUpIn'
     }
   });
 
   Card.Name = React.createClass({
     render: function() {
-      return <Card>
+      return <Card loadOrder={this.props.loadOrder}>
         <ImageView style={this.style.img} src="/img/profile.jpg" />
         <div style={this.style.content}>
           <div style={this.style.contentInner}>
@@ -94,7 +107,7 @@ module.exports = (function() {
 
   Card.Image = React.createClass({
     render: function() {
-      return <Card handleClick={this.props.handleClick}>
+      return <Card handleClick={this.props.handleClick} loadOrder={this.props.loadOrder}>
           <ImageView style={this.style.img} src={this.props.img} />
           <div style={this.style.content}>{this.props.children}</div>
         </Card>;
@@ -128,7 +141,7 @@ module.exports = (function() {
 
   Card.Icon = React.createClass({
     render: function() {
-      return <Card style={this.style.host}>
+      return <Card style={this.style.host} loadOrder={this.props.loadOrder}>
         <div style={this.style.icon}>
           <img src={this.props.img} style={this.style.img} />
         </div>

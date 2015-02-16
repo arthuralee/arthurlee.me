@@ -1,0 +1,74 @@
+/* ============================
+    Global stuff
+=============================== */
+body {
+  background-color: #f3f3f3;
+  padding-top: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+::selection {
+  background: #F7CCCC; /* Safari */
+  }
+::-moz-selection {
+  background: #F7CCCC; /* Firefox */
+}
+
+/* Card */
+#main .card {
+  margin: 50px auto;
+}
+
+#main .card p {
+  font-weight: 100;
+}
+
+#main .card em {
+  font-weight: 300;
+  font-style: normal;
+}
+
+#main .card a {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  color: #A5394F;
+}
+
+#main .card a:hover {
+  color: #CB5858;
+  text-decoration: underline;
+}
+
+/* ============================
+         Animation
+=============================== */
+
+@-webkit-keyframes bounceIn {
+  0%{ transform: scale(0); }
+  25%{ transform: scale(0.5); }
+  50%{ transform: scale(1.2); }
+  75%{ transform: scale(0.7); }
+  100%{ transform: scale(1); }
+}
+
+@-moz-keyframes bounceIn {
+  0%{ transform: scale(0); }
+  25%{ transform: scale(0.5); }
+  50%{ transform: scale(1.2); }
+  75%{ transform: scale(0.7); }
+  100%{ transform: scale(1); }
+}
+
+/* ============================
+         Footer
+=============================== */
+
+.footer {
+  height: 90px;
+  padding: 5px;
+  color: #ccc;
+  font-weight: 100;
+  font-size: 13px;
+  text-align: center;
+}

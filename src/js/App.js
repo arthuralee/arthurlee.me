@@ -23,16 +23,16 @@ var App = React.createClass({
   render: function() {
     return <div>
       {this.state.cards}
-      <ScrollLoader loadAction={this.loadMoreCards} />
+      <ScrollLoader loadAction={this.loadMoreCards} scrollThreshold={400} />
       <Footer />
     </div>;
   },
   loadMoreCards: function(cb) {
     window.setTimeout(function() {
       var newCards = this.state.cards;
-      newCards = newCards.concat([
-        <Card />, <Card />, <Card />, <Card />
-      ]);
+      for (var i=0; i<4; i++) {
+        newCards.push(<Card>Card {~~(Math.random()*50)}</Card>);
+      }
       this.setState({cards: newCards});
       cb();
     }.bind(this), 1000);

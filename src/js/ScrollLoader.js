@@ -24,6 +24,7 @@ module.exports = (function() {
       },
       render: function() {
         var divStyle = {
+          transition: 'transform 0.5s',
           textAlign: 'center'
         }
         if (this.state.state === STATE_LOADED) {
@@ -59,8 +60,6 @@ module.exports = (function() {
       },
       style: {
         loader: {
-          transition: 'transform 0.5s',
-          transform: 'scale(1)',
           color: '#bbb'
         }
       }

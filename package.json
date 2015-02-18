@@ -4,7 +4,8 @@
   "description": "Personal website",
   "main": "server.js",
   "dependencies": {
-    "react": "^0.12.2"
+    "react": "^0.12.2",
+    "reflux": "^0.2.5"
   },
   "devDependencies": {
     "browser-sync": "^2.0.1",

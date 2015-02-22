@@ -1,5 +1,6 @@
 const STATE_LOADED = 0;
 const STATE_LOADING = 1;
+const STATE_RANOUT = 2;
 
 var React = require('react');
 
@@ -27,11 +28,11 @@ module.exports = (function() {
           transition: 'transform 0.5s',
           textAlign: 'center'
         }
-        if (this.state.state === STATE_LOADED) {
-          divStyle.transform = 'scale(0)';
-        } else {
+        if (this.state.state === STATE_LOADING) {
           divStyle.WebkitAnimation = 'bounceIn 0.5s linear';
           divStyle.MozAnimation = 'bounceIn 0.5s linear';
+        } else {
+          divStyle.transform = 'scale(0)';
         }
         return <div style={divStyle}><i style={this.style.loader} className={'fa fa-2x fa-circle-o-notch fa-spin'}></i></div>;
       },
@@ -54,9 +55,13 @@ module.exports = (function() {
           this.removeListener();
         }
       },
-      resetState: function() {
-        this.setState({state: STATE_LOADED});
-        this.addListener();
+      resetState: function(didRunOutOfItems) {
+        if (didRunOutOfItems) {
+          this.setState({state: STATE_RANOUT})
+        } else {
+          this.setState({state: STATE_LOADED});
+          this.addListener();
+        }
       },
       style: {
         loader: {

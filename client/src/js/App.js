@@ -10,6 +10,9 @@ var CardActions = require('./actions/CardActions.js');
 
 var App = React.createClass({
   mixins: [Reflux.connect(CardStore, 'cards')],
+  componentDidMount: function() {
+    CardActions.load();
+  },
   render: function() {
     return <div>
       {this.state.cards}

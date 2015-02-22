@@ -13,8 +13,8 @@ var handleErrors  = require('./gulp/util/handleErrors');
 // Define some paths.
 var paths = {
   app_js: ['./src/js/app.js'],
-  static: ['src/!(js)/*', 'src/*.*'],
-  js: ['src/js/*.js'],
+  static: ['./src/!(js)/*', './src/*.*'],
+  js: ['./src/js/**/*.js'],
   dest: './build/'
 };
 
@@ -44,6 +44,7 @@ gulp.task('build', ['clean'], function() {
 // BrowserSync
 gulp.task('browserSync', function() {
   browserSync({
+    open: false,
     server: {
       // Serve up our build folder
       baseDir: paths.dest
@@ -53,5 +54,5 @@ gulp.task('browserSync', function() {
 
 // The default task (called when we run `gulp` from cli)
 gulp.task('default', ['build', 'browserSync'], function() {
-  gulp.watch(['src/js/*.js', 'src/*.*', 'src/!(js)/*'], ['build']);
+  gulp.watch(['src/js/**/*.js', 'src/*.*', 'src/!(js)/*'], ['build']);
 });

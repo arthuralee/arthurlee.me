@@ -8,11 +8,6 @@ module.exports = (function() {
       }
     },
     componentWillMount: function() {
-      // Inherit props
-      for (prop in this.props.style) {
-        this.style[prop] = this.props.style[prop];
-      }
-
       // preload image
       var img = new Image();
       img.onload = function() {
@@ -22,11 +17,14 @@ module.exports = (function() {
       img.src = this.props.src;
     },
     render: function() {
+      var style = this.style;
+      Object.assign(style, this.props.style); // Inherit prop styles
+
       if (this.state.imageLoaded) {
-        this.style.opacity = 1;
-        this.style.backgroundImage = `url(${this.props.src})`;
+        style.opacity = 1;
+        style.backgroundImage = `url(${this.props.src})`;
       }
-      return <div style={this.style} ref="image"></div>;
+      return <div style={style} ref="image"></div>;
     },
     style: {
       transition: '0.5s opacity',

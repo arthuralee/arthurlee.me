@@ -9,6 +9,8 @@ var del           = require('del');  // Deletes files.
 var reactify      = require('reactify');
 var source        = require('vinyl-source-stream');
 var handleErrors  = require('./gulp/util/handleErrors');
+var sourcemaps    = require('gulp-sourcemaps');
+var uglify        = require('gulp-uglify');
 
 // Define some paths.
 var paths = {

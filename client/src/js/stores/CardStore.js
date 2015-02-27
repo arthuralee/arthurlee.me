@@ -19,7 +19,6 @@ module.exports = (function() {
     },
     init: function() {
       this.currentCard = 0;
-      this.cardList = CardDB.cardList;
       this.listenTo(CardActions.load, this.fetchData);
     },
     fetchData: function() {
@@ -47,8 +46,7 @@ module.exports = (function() {
         var key = this.ordering[i];
         if(key) {
           var nextCard = CardDB.getCard(key);
-          nextCard.key = key;
-          nextCard.props.loadOrder = i-index;
+          nextCard.props.loadOrder = i-index; //TODO: fix anti-pattern
           cards.push(nextCard);
           this.currentCard++;
 

@@ -1,41 +1,44 @@
 var React = require('react');
 var ImageView = require('./ImageView.js');
 var SocialBtn = require('./SocialBtn.js');
+Object.assign = require('object-assign');
 
 module.exports = (function() {
   var Card = React.createClass({
     getDefaultProps: function() {
       return {
-        loadOrder: 0
+        loadOrder: 0,
+        height: 275,
+        width: 450,
+        backgroundColor: '#fff',
+        style: {}
       };
     },
     componentWillMount: function() {
-      // Inherit styles
-      for (prop in this.props.style) {
-        this.style[prop] = this.props.style[prop];
-      }
 
-      // Calculate animation delay
-      var animDuration = `${0.7 + this.props.loadOrder/4 }s`;
-      this.style.WebkitAnimationDuration = animDuration;
-      this.style.MozAnimationDuration = animDuration;
     },
     render: function() {
+      // Calculate animation delay
+      var animDuration = `${0.7 + this.props.loadOrder/4 }s`;
+      var cardStyle = {
+        WebkitAnimationDuration: animDuration,
+        MozAnimationDuration: animDuration,
+        // change width, height and bg according to props
+        width: this.props.width,
+        height: this.props.height,
+        backgroundColor: this.props.backgroundColor
+      }
+      Object.assign(cardStyle, this.props.style, this._style);
+
       return <div
                 onClick={this.handleClick}
-                style={this.style}
+                style={cardStyle}
                 className="card">{this.props.children}</div>;
     },
-    handleClick: function(e) {
-      this.props.cardClicked(this.props.num);
-    },
-    style: {
+    _style: {
       fontFamily: '"Roboto", sans-serif',
       display: 'block',
       position: 'relative',
-      backgroundColor: '#fff',
-      width: 450,
-      height: 275,
       borderRadius: 5,
       boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)',
       boxSizing: 'border-box',
@@ -47,12 +50,12 @@ module.exports = (function() {
   Card.Name = React.createClass({
     render: function() {
       return <Card loadOrder={this.props.loadOrder}>
-        <ImageView style={this.style.img} src="/img/profile.jpg" />
-        <div style={this.style.content}>
-          <div style={this.style.contentInner}>
-            <h1 style={this.style.h1}>Arthur Lee</h1>
-            <h2 style={this.style.h2}>Designer &amp; Developer</h2>
-            <div style={this.style.socialLinks}>
+        <ImageView style={this._style.img} src="/img/profile.jpg" />
+        <div style={this._style.content}>
+          <div style={this._style.contentInner}>
+            <h1 style={this._style.h1}>Arthur Lee</h1>
+            <h2 style={this._style.h2}>Designer &amp; Developer</h2>
+            <div style={this._style.socialLinks}>
               <SocialBtn href="http://www.google.com/recaptcha/mailhide/d?k=01OWkW9eUwqxP23Bxfd4o8pw==&c=FVysm5b2s6wu3dgCw4p4R4PNpxPDYSSb9SWUs-ltErQ=" icon="fa-envelope-o" />
               <SocialBtn href="http://www.linkedin.com/in/arthuralee" icon="fa-linkedin" />
               <SocialBtn href="https://github.com/arthuralee" icon="fa-github" />
@@ -61,7 +64,7 @@ module.exports = (function() {
         </div>
       </Card>
     },
-    style: {
+    _style: {
       img: {
         backgroundColor: '#ddd',
         position: 'absolute',
@@ -108,11 +111,11 @@ module.exports = (function() {
   Card.Image = React.createClass({
     render: function() {
       return <Card handleClick={this.props.handleClick} loadOrder={this.props.loadOrder}>
-          <ImageView style={this.style.img} src={this.props.img} />
-          <div style={this.style.content}>{this.props.children}</div>
+          <ImageView style={this._style.img} src={this.props.img} />
+          <div style={this._style.content}>{this.props.children}</div>
         </Card>;
     },
-    style: {
+    _style: {
       img: {
         backgroundColor: '#ddd',
         position: 'absolute',
@@ -173,6 +176,40 @@ module.exports = (function() {
         display: 'flex',
         justifyItems: 'center',
         alignItems: 'center'
+      }
+    }
+  });
+
+  Card.ImageFull = React.createClass({
+    render: function() {
+      return <Card handleClick={this.props.handleClick} loadOrder={this.props.loadOrder} height={400}>
+          <ImageView style={this._style.img} src={this.props.img} />
+          <div style={this._style.content}>{this.props.children}</div>
+        </Card>;
+    },
+    _style: {
+      img: {
+        backgroundColor: '#ddd',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        height: '100%',
+        width: '100%',
+        borderTopLeftRadius: '5px',
+        borderBottomLeftRadius: '5px'
+      },
+      content: {
+        boxSizing: 'border-box',
+        width: '65%',
+        height: '100%',
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        padding: '0 15px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: '36px'
       }
     }
   });

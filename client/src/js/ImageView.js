@@ -17,8 +17,8 @@ module.exports = (function() {
       img.src = this.props.src;
     },
     render: function() {
-      var style = this.style;
-      Object.assign(style, this.props.style); // Inherit prop styles
+      var style = {};
+      Object.assign(style, this._style, this.props.style); // Inherit prop styles
 
       if (this.state.imageLoaded) {
         style.opacity = 1;
@@ -26,7 +26,7 @@ module.exports = (function() {
       }
       return <div style={style} ref="image"></div>;
     },
-    style: {
+    _style: {
       transition: '0.5s opacity',
       opacity: 0,
       backgroundSize: 'cover',

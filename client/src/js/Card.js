@@ -14,9 +14,6 @@ module.exports = (function() {
         style: {}
       };
     },
-    componentWillMount: function() {
-
-    },
     render: function() {
       // Calculate animation delay
       var animDuration = `${0.7 + this.props.loadOrder/4 }s`;
@@ -108,7 +105,7 @@ module.exports = (function() {
     }
   });
 
-  Card.Image = React.createClass({
+  Card.ImageLeft = React.createClass({
     render: function() {
       return <Card handleClick={this.props.handleClick} loadOrder={this.props.loadOrder}>
           <ImageView style={this._style.img} src={this.props.img} />
@@ -196,7 +193,7 @@ module.exports = (function() {
         height: '100%',
         width: '100%',
         borderTopLeftRadius: '5px',
-        borderBottomLeftRadius: '5px'
+        borderTopRightRadius: '5px'
       },
       content: {
         boxSizing: 'border-box',

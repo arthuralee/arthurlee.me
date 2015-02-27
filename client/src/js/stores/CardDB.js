@@ -18,8 +18,8 @@ module.exports = (function() {
       <p>I worked in the <em>UI Engineering</em> team at <a href="http://www.zazzle.com/" target="_blank">Zazzle</a> last summer</p>
     </Card.Icon>,
 
-    'photography': <Card.ImageFull key="photography" img="img/profile.jpg">
-      <p>I take photos!</p>
+    'photography': <Card.ImageFull key="photography" img="img/photography.jpg">
+      <p>I take photos! Visit my <a href="https://500px.com/arthuralee" target="_blank">500px profile</a>.</p>
     </Card.ImageFull>
   };
 

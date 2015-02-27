@@ -38,7 +38,7 @@ module.exports = (function() {
         var didRunOutOfCards = this.prepareCards(this.cards, this.currentCard, NUMCARDS_PER_LOAD);
         this.trigger(this.cards);
         done(didRunOutOfCards);
-      }.bind(this), 100);
+      }.bind(this), 1000);
     },
     prepareCards: function(cards, index, length) {
       var didRunOut = true;

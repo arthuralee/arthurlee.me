@@ -17,6 +17,7 @@ body {
 /* Card */
 #main .card {
   margin: 50px auto;
+  -webkit-animation: fadeUpIn;
 }
 
 #main .card p {

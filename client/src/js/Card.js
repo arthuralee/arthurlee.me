@@ -39,8 +39,9 @@ module.exports = (function() {
       borderRadius: 5,
       boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)',
       boxSizing: 'border-box',
-      WebkitAnimation: 'fadeUpIn',
-      MozAnimation: 'fadeUpIn'
+      //WebkitAnimationPlayState: 'paused',
+      //WebkitAnimation: 'fadeUpIn',
+      //MozAnimation: 'fadeUpIn'
     }
   });
 
@@ -190,23 +191,22 @@ module.exports = (function() {
         position: 'absolute',
         left: 0,
         top: 0,
-        height: '100%',
+        height: '300px',
         width: '100%',
         borderTopLeftRadius: '5px',
         borderTopRightRadius: '5px'
       },
       content: {
         boxSizing: 'border-box',
-        width: '65%',
-        height: '100%',
+        width: '100%',
+        height: '100px',
         position: 'absolute',
-        top: 0,
-        right: 0,
+        bottom: 0,
         padding: '0 15px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: '36px'
+        fontSize: '25px'
       }
     }
   });

@@ -25,23 +25,12 @@ module.exports = (function() {
         height: this.props.height,
         backgroundColor: this.props.backgroundColor
       }
-      Object.assign(cardStyle, this.props.style, this._style);
+      Object.assign(cardStyle, this.props.style);
 
       return <div
                 onClick={this.handleClick}
                 style={cardStyle}
-                className="card">{this.props.children}</div>;
-    },
-    _style: {
-      fontFamily: '"Roboto", sans-serif',
-      display: 'block',
-      position: 'relative',
-      borderRadius: 5,
-      boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)',
-      boxSizing: 'border-box',
-      //WebkitAnimationPlayState: 'paused',
-      //WebkitAnimation: 'fadeUpIn',
-      //MozAnimation: 'fadeUpIn'
+                className="Card">{this.props.children}</div>;
     }
   });
 
@@ -180,33 +169,18 @@ module.exports = (function() {
 
   Card.ImageFull = React.createClass({
     render: function() {
-      return <Card handleClick={this.props.handleClick} loadOrder={this.props.loadOrder} height={400}>
+      return <Card handleClick={this.props.handleClick} loadOrder={this.props.loadOrder} height="100%">
           <ImageView style={this._style.img} src={this.props.img} />
-          <div style={this._style.content}>{this.props.children}</div>
+          <div style={this._style.content} className="Card-ImageFull-content">{this.props.children}</div>
         </Card>;
     },
     _style: {
       img: {
         backgroundColor: '#ddd',
-        position: 'absolute',
-        left: 0,
-        top: 0,
         height: '300px',
         width: '100%',
         borderTopLeftRadius: '5px',
         borderTopRightRadius: '5px'
-      },
-      content: {
-        boxSizing: 'border-box',
-        width: '100%',
-        height: '100px',
-        position: 'absolute',
-        bottom: 0,
-        padding: '0 15px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: '25px'
       }
     }
   });

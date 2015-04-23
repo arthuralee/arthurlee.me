@@ -15,30 +15,50 @@ body {
 }
 
 /* Card */
-#main .card {
+.Card {
+  font-weight: 100;
+  display: block;
+  position: relative;
+  border-radius: 5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
   margin: 50px auto;
   -webkit-animation: fadeUpIn;
+  -moz-animation: fadeUpIn;
 }
 
-#main .card p {
-  font-weight: 100;
-}
-
-#main .card em {
+.Card em {
   font-weight: 300;
   font-style: normal;
 }
 
-#main .card a {
+.Card a {
   text-decoration: none;
   font-style: normal;
   font-weight: 400;
   color: #A5394F;
 }
 
-#main .card a:hover {
+.Card a:hover {
   color: #CB5858;
   text-decoration: underline;
+}
+
+.Card-ImageFull-content {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.Card-ImageFull-content h1 {
+  font-weight: 100;
+  font-size: 28px;
+}
+
+.Card-ImageFull-content p {
+  font-weight: 300;
+  font-size: 16px;
+  color: #888;
 }
 
 /* ============================

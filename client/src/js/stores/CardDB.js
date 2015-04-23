@@ -19,7 +19,8 @@ module.exports = (function() {
     </Card.Icon>,
 
     'photography': <Card.ImageFull key="photography" img="img/photography.jpg">
-      <p>I take photos! Visit my <a href="https://500px.com/arthuralee" target="_blank">500px profile</a>.</p>
+      <h1>Natural Bridges State Beach, California</h1>
+      <p>I take photos. Visit my <a href="https://500px.com/arthuralee" target="_blank">500px profile</a>.</p>
     </Card.ImageFull>
   };
 
@@ -36,6 +37,7 @@ module.exports = (function() {
       return cardList[key];
     },
     getDefaultOrdering: function() {
+      //return ['photography'];
       return defaultOrdering;
     }
   }

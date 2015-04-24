@@ -1,0 +1,20 @@
+body {
+  text-align: center;
+  color: #666;
+  padding-top: 100px;
+}
+h1 {
+  font-size: 40px;
+}
+p {
+  color: #aaa;
+  margin-bottom: 60px;
+}
+a:link, a:visited {
+  text-decoration: none;
+  color: #A5394F;
+}
+a:hover {
+  text-decoration: underline;
+  color: #CB5858;
+}

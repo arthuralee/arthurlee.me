@@ -1,5 +1,6 @@
 var React = require('react');
 var Reflux = require('reflux');
+var request = require('superagent');
 var Card = require('../Card.js');
 var CardActions = require('../actions/CardActions.js');
 var CardDB = require('./CardDB.js');
@@ -22,16 +23,19 @@ module.exports = (function() {
       this.listenTo(CardActions.load, this.fetchData);
     },
     fetchData: function() {
-      //TODO: add low timeout
-      fetch('http://0.0.0.0/order')
-        .then(function(response) {
-          return response.json()
-        }).catch(function(ex) {
-          // error retrieving
-          this.ordering = CardDB.getDefaultOrdering();
+      request
+        .get('http://api.arthurlee.me/order')
+        .timeout(1000)
+        .end(function(err, res) {
+          if (err) {
+            this.ordering = CardDB.getDefaultOrdering();
+          } else {
+            this.ordering = res.body.ordering;
+          }
+
           this.prepareCards(this.cards, this.currentCard, NUMCARDS_PER_LOAD);
           this.trigger(this.cards);
-        }.bind(this))
+        }.bind(this));
     },
     onLoadMore: function(done) {
       window.setTimeout(function() {

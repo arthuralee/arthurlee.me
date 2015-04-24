@@ -14,7 +14,7 @@ var uglify        = require('gulp-uglify');
 
 // Define some paths.
 var paths = {
-  app_js: ['./src/js/app.js'],
+  app_js: ['./src/js/App.js'],
   static: ['./src/!(js)/*', './src/*.*'],
   js: ['./src/js/**/*.js'],
   dest: './build/'

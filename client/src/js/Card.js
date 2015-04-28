@@ -185,6 +185,23 @@ module.exports = (function() {
     }
   });
 
+  Card.ImageLink = React.createClass({
+    render: function() {
+      return (
+        <a href={this.props.href} target={this.props.target} style={this._style.link} className="ImageLink">
+          {this.props.text}
+        </a>);
+    },
+    _style: {
+      spacer: {
+        height: 70
+      },
+      link: {
+        height: 300
+      }
+    }
+  })
+
   return Card;
 
 })();

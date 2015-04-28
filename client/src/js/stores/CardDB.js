@@ -20,7 +20,8 @@ module.exports = (function() {
 
     'photography': <Card.ImageFull key="photography" img="img/photography.jpg">
       <h1>Natural Bridges State Beach, California</h1>
-      <p>I take photos. Visit my <a href="https://500px.com/arthuralee" target="_blank">500px profile</a>.</p>
+      <p>I love taking photos, especially of landscape.</p>
+      <Card.ImageLink href="https://500px.com/arthuralee" target="_blank" text="Visit my 500px profile &rarr;" />
     </Card.ImageFull>
   };
 

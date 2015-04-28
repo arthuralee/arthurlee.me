@@ -19,7 +19,7 @@ body {
   font-weight: 100;
   display: block;
   position: relative;
-  border-radius: 5;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   margin: 50px auto;
@@ -61,6 +61,27 @@ body {
   color: #888;
 }
 
+a.ImageLink {
+  opacity: 0;
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #eee;
+  font-size: 25px;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.1s;
+}
+.Card:hover .ImageLink {
+  opacity: 1;
+}
+a.ImageLink:hover {
+  color: #eee;
+}
 /* ============================
          Animation
 =============================== */

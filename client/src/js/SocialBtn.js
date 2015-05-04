@@ -15,10 +15,10 @@ module.exports = (function() {
         backgroundColor: this.state.mouseIn ? '#e4e4e4' : '#eee',
         border: '1px solid #e8e8e8',
         borderRadius: '50%',
-        margin: '0 2px',
-        fontSize: '28px',
-        width: '55px',
-        height: '55px',
+        margin: '0 4px',
+        fontSize: '26px',
+        width: '45px',
+        height: '45px',
         textDecoration: 'none'
       }
 

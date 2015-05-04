@@ -45,6 +45,7 @@ module.exports = (function() {
             <div style={this._style.socialLinks}>
               <SocialBtn href="http://www.google.com/recaptcha/mailhide/d?k=01OWkW9eUwqxP23Bxfd4o8pw==&c=FVysm5b2s6wu3dgCw4p4R4PNpxPDYSSb9SWUs-ltErQ=" icon="fa-envelope-o" />
               <SocialBtn href="http://www.linkedin.com/in/arthuralee" icon="fa-linkedin" />
+              <SocialBtn href="https://twitter.com/compid" icon="fa-twitter" />
               <SocialBtn href="https://github.com/arthuralee" icon="fa-github" />
             </div>
           </div>

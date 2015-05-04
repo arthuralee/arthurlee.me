@@ -6,6 +6,10 @@ module.exports = (function() {
   var cardList = {
     'name': <Card.Name key="name" />,
 
+    'blog': <Card.Icon key="blog" icon="fa-code">
+      <p>Read posts about tech, travel and more on my <a href="/blog">blog &rarr;</a></p>
+    </Card.Icon>,
+
     'job-pinterest': <Card.Icon key="job-pinterest" img="img/pinterest.png">
       <p>I will be joining <a href="http://www.pinterest.com/" target="_blank">Pinterest</a> as a <em>Software Engineer</em> in 2015</p>
     </Card.Icon>,
@@ -27,6 +31,7 @@ module.exports = (function() {
 
   var defaultOrdering = [
     'name',
+    'blog',
     'job-pinterest',
     'cmu',
     'job-zazzle',

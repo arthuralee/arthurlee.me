@@ -132,9 +132,13 @@ module.exports = (function() {
 
   Card.Icon = React.createClass({
     render: function() {
+      var icon = this.props.icon ?
+                 <i style={this.style.icon} className={`fa ${this.props.icon}`}></i> :
+                 <img src={this.props.img} style={this.style.img} />;
+
       return <Card style={this.style.host} loadOrder={this.props.loadOrder}>
-        <div style={this.style.icon}>
-          <img src={this.props.img} style={this.style.img} />
+        <div style={this.style.imgContainer}>
+          {icon}
         </div>
         <div style={this.style.content}>
           {this.props.children}
@@ -145,10 +149,14 @@ module.exports = (function() {
       host: {
         padding: '25px 20px'
       },
-      icon: {
+      imgContainer: {
         margin: 'auto',
         width: 90,
         height: 90
+      },
+      icon: {
+        fontSize: 90,
+        color: '#999'
       },
       img: {
         width: '100%',
@@ -162,7 +170,7 @@ module.exports = (function() {
         color: '#444',
         height: 150,
         display: 'flex',
-        justifyItems: 'center',
+        justifyContent: 'center',
         alignItems: 'center'
       }
     }
@@ -201,7 +209,9 @@ module.exports = (function() {
         height: 300
       }
     }
-  })
+  });
+
+  Card.Icon
 
   return Card;
 

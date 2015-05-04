@@ -1,7 +1,10 @@
 title: Useful JS promises
 date: 2014/6/9 00:13:00
-tags:
+categories:
 - tech
+tags:
+- js
+- flux
 ---
 I’ve always understood how promises work, but never saw its true light until recently. I always just saw it as a better way to write sequential or parallel asynchronous code.
 
@@ -37,6 +40,8 @@ I used the Facebook javascript API and jQuery’s $.Deferred object to maintain 
 This could work well. When a result is returned by the Facebook server, it is cached into an object stored in the function’s closure. If I were to make another request with the same userId, the cached result will be returned.
 
 However, there was a problem. Pages that require profile information often dispatch multiple requests at the same time. Some of these requests may be for the same profile, but these requests will all result in cache misses if they are fired at the same time. This is because the cache is not populated until Facebook replies with a response.
+
+<!-- more -->
 
 Here is when promises become super useful:
 

@@ -17,7 +17,7 @@ var App = React.createClass({
     return <div>
       {this.state.cards}
       <ScrollLoader loadAction={CardActions.loadMore} scrollThreshold={400} />
-      <Footer />
+      {/*<Footer />*/}
     </div>;
   }
 });

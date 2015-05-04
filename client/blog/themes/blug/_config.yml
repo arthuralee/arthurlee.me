@@ -1,24 +1,24 @@
 # Header
 menu:
   Home: /
-  Archives: /archives
-rss: /atom.xml
+  Archives: /blog/archives
+search: false
 
 # Content
 excerpt_link: Read More
 fancybox: true
 
 # Sidebar
-sidebar: right
+sidebar: bottom
 widgets:
 - category
 - tag
-- tagcloud
+#- tagcloud
 - archive
 - recent_posts
 
 # Miscellaneous
-google_analytics:
+google_analytics: UA-4113512-8
 favicon: /favicon.png
 twitter:
 google_plus:

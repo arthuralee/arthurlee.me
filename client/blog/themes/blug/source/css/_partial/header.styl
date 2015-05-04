@@ -29,8 +29,17 @@
   left: 0
   width: 100%
   height: 100%
-  background: url(banner-url) center #000
+  background: url(banner-url) top center #000
   background-size: cover
+  z-index: -2
+
+#banner-overlay
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0) 80%)
   z-index: -1
 
 #header-title

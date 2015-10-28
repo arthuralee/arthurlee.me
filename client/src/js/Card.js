@@ -41,7 +41,7 @@ module.exports = (function() {
         <div style={this._style.content}>
           <div style={this._style.contentInner}>
             <h1 style={this._style.h1}>Arthur Lee</h1>
-            <h2 style={this._style.h2}>Designer &amp; Developer</h2>
+            <h2 style={this._style.h2}>Software Engineer</h2>
             <div style={this._style.socialLinks}>
               <SocialBtn href="http://www.google.com/recaptcha/mailhide/d?k=01OWkW9eUwqxP23Bxfd4o8pw==&c=FVysm5b2s6wu3dgCw4p4R4PNpxPDYSSb9SWUs-ltErQ=" icon="fa-envelope-o" />
               <SocialBtn href="http://www.linkedin.com/in/arthuralee" icon="fa-linkedin" />

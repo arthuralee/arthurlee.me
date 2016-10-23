@@ -134,7 +134,7 @@ module.exports = (function() {
     render: function() {
       var icon = this.props.icon ?
                  <i style={this.style.icon} className={`fa ${this.props.icon}`}></i> :
-                 <img src={this.props.img} style={this.style.img} />;
+                 <img src={this.props.img} style={this.style.img} alt="icon" />;
 
       return <Card style={this.style.host} loadOrder={this.props.loadOrder}>
         <div style={this.style.imgContainer}>
@@ -210,8 +210,6 @@ module.exports = (function() {
       }
     }
   });
-
-  Card.Icon
 
   return Card;
 

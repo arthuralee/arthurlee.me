@@ -1,7 +1,7 @@
 var React = require('react');
 var Reflux = require('reflux');
 
-var ScrollLoader = require('./ScrollLoader.js');
+import ScrollLoader from './ScrollLoader';
 
 var CardStore = require('./stores/CardStore.js');
 var CardActions = require('./actions/CardActions.js');

@@ -66,22 +66,6 @@ a.ImageLink:hover {
   color: #eee;
 }
 
-@-webkit-keyframes bounceIn {
-  0%{ transform: scale(0); }
-  25%{ transform: scale(0.5); }
-  50%{ transform: scale(1.2); }
-  75%{ transform: scale(0.7); }
-  100%{ transform: scale(1); }
-}
-
-@-moz-keyframes bounceIn {
-  0%{ transform: scale(0); }
-  25%{ transform: scale(0.5); }
-  50%{ transform: scale(1.2); }
-  75%{ transform: scale(0.7); }
-  100%{ transform: scale(1); }
-}
-
 @-webkit-keyframes fadeUpIn {
   0%{ transform: translateY(20px); opacity: 0; }
   50%{ transform: translateY(20px); opacity: 0; }

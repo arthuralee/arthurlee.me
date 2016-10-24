@@ -3,10 +3,6 @@ import CardDB from './CardDB';
 
 const NUMCARDS_PER_LOAD = 3;
 
-const withLoadOrder = (Subject, loadOrder) => {
-  return (...props) => <Subject {...props} loadOrder={loadOrder} />;
-};
-
 export default class CardStore {
   constructor(trigger) {
     this.cards = [];
@@ -30,9 +26,8 @@ export default class CardStore {
     for (var i=index; i<index+length; i++) {
       var key = this.ordering[i];
       if (key) {
-        // var nextCard = withLoadOrder(CardDB.getCard(key), i - index);
-        var nextCard = CardDB.getCard(key);
-        cards.push(nextCard);
+        const NextCard = CardDB.getCard(key, i - index);
+        cards.push(<NextCard key={key} />);
         this.currentCard++;
         didRunOut = false;
       }

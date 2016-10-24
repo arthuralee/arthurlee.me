@@ -68,12 +68,12 @@ a.ImageLink:hover {
 
 @-webkit-keyframes fadeUpIn {
   0%{ transform: translateY(20px); opacity: 0; }
-  50%{ transform: translateY(20px); opacity: 0; }
+  20%{ transform: translateY(20px); opacity: 0; }
   100%{ transform: translateY(0); opacity: 1; }
 }
 
 @-moz-keyframes fadeUpIn {
   0%{ transform: translateY(20px); opacity: 0; }
-  50%{ transform: translateY(20px); opacity: 0; }
+  20%{ transform: translateY(20px); opacity: 0; }
   100%{ transform: translateY(0); opacity: 1; }
 }

@@ -14,7 +14,7 @@ export class Card extends Component {
   }
   render () {
     // Calculate animation delay
-    var animDuration = `${0.7 + this.props.loadOrder/4 }s`;
+    var animDuration = `${0.3 + this.props.loadOrder/3 }s`;
     var cardStyle = {
       WebkitAnimationDuration: animDuration,
       MozAnimationDuration: animDuration,

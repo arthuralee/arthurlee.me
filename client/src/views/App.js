@@ -1,23 +1,26 @@
-var React = require('react');
-var Reflux = require('reflux');
+import React, { Component } from 'react';
+import CardStore from './stores/CardStore';
+import ScrollLoader from './ScrollLoader';
 
-var ScrollLoader = require('./ScrollLoader.js');
-
-var CardStore = require('./stores/CardStore.js');
-var CardActions = require('./actions/CardActions.js');
-
-var App = React.createClass({
-  mixins: [Reflux.connect(CardStore, 'cards')],
-  componentDidMount: function() {
-    CardActions.load();
-  },
-  render: function() {
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cards: []
+    };
+    this.cardStore = new CardStore(this.onNewData);
+  }
+  onNewData = (cards) => {
+    this.setState({ cards });
+  }
+  componentDidMount() {
+    this.cardStore.fetchData();
+  }
+  render() {
     return <div>
       {this.state.cards}
-      <ScrollLoader loadAction={CardActions.loadMore} scrollThreshold={400} />
+      <ScrollLoader loadAction={this.cardStore.loadMore} scrollThreshold={400} />
       {/*<Footer />*/}
     </div>;
   }
-});
-
-module.exports = App;
+}

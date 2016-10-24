@@ -10,13 +10,13 @@ module.exports = (function() {
     render: function() {
       var linkStyle = {
         display: 'inline-block',
-        color: '#aaa',
-        transition: 'background-color 0.2s',
-        backgroundColor: this.state.mouseIn ? '#e4e4e4' : '#eee',
+        color: this.state.mouseIn ? '#777' : '#aaa',
+        transition: 'border-color, color 0.2s',
         border: '1px solid #e8e8e8',
+        borderColor: this.state.mouseIn ? '#aaa' : '#e8e8e8',
         borderRadius: '50%',
         margin: '0 4px',
-        fontSize: '26px',
+        fontSize: '23px',
         width: '45px',
         height: '45px',
         textDecoration: 'none'

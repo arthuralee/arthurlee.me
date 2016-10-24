@@ -9,7 +9,6 @@ export class Card extends Component {
     loadOrder: 0,
     height: 275,
     width: 450,
-    backgroundColor: '#fff',
     style: {}
   }
   render () {

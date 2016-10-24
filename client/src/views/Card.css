@@ -3,8 +3,9 @@
   display: block;
   position: relative;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #efefef;
   margin: 50px auto;
   -webkit-animation: fadeUpIn;
   -moz-animation: fadeUpIn;

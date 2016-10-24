@@ -23,7 +23,7 @@ const cardList = {
   'photography': ({loadOrder}) => <Card.ImageFull loadOrder={loadOrder} img="img/photography.jpg">
     <h1>Natural Bridges State Beach, California</h1>
     <p>I love taking photos, especially of landscape.</p>
-    <Card.ImageLink href="https://500px.com/arthuralee" target="_blank" text="Visit my 500px profile &rarr;" />
+    <p><a href="https://500px.com/arthuralee" target="_blank">Visit my 500px profile &rarr;</a></p>
   </Card.ImageFull>
 };
 

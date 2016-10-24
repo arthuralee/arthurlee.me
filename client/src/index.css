@@ -1,4 +1,12 @@
 body {
-  margin: 0;
-  padding: 0;
+  background-color: #f3f3f3;
+  padding-top: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+::selection {
+  background: #F7CCCC; /* Safari */
+  }
+::-moz-selection {
+  background: #F7CCCC; /* Firefox */
 }

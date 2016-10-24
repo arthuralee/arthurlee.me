@@ -1,7 +1,8 @@
 var React = require('react');
 var ImageView = require('./ImageView.js');
 var SocialBtn = require('./SocialBtn.js');
-Object.assign = require('object-assign');
+
+import './Card.css';
 
 module.exports = (function() {
   var Card = React.createClass({
@@ -23,9 +24,9 @@ module.exports = (function() {
         // change width, height and bg according to props
         width: this.props.width,
         height: this.props.height,
-        backgroundColor: this.props.backgroundColor
+        backgroundColor: this.props.backgroundColor,
+        ...this.props.style
       }
-      Object.assign(cardStyle, this.props.style);
 
       return <div
                 onClick={this.handleClick}

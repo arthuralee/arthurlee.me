@@ -1,9 +1,7 @@
 var React = require('react');
 var Reflux = require('reflux');
 
-var Card = require('./Card.js');
 var ScrollLoader = require('./ScrollLoader.js');
-var Footer = require('./Footer.js');
 
 var CardStore = require('./stores/CardStore.js');
 var CardActions = require('./actions/CardActions.js');
@@ -22,4 +20,4 @@ var App = React.createClass({
   }
 });
 
-React.render(<App />, document.querySelector('#main'));
+module.exports = App;

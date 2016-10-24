@@ -1,4 +1,6 @@
 body {
+  background-color: #f3f3f3;
+  font-family: "Roboto", sans-serif;
   text-align: center;
   color: #666;
   padding-top: 100px;
@@ -17,4 +19,10 @@ a:link, a:visited {
 a:hover {
   text-decoration: underline;
   color: #CB5858;
+}
+::selection {
+  background: #F7CCCC; /* Safari */
+  }
+::-moz-selection {
+  background: #F7CCCC; /* Firefox */
 }

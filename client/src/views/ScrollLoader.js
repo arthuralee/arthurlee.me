@@ -16,7 +16,7 @@ const styles = {
 };
 
 export default class ScrollLoader extends Component {
-  defaultProps = {
+  static defaultProps = {
     scrollThreshold: 100
   }
 

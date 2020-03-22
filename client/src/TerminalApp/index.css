@@ -11,8 +11,9 @@
 
 .terminal {
   color: #ccc;
-  font-family: "Monaco";
+  font-family: "Ubuntu Mono", monospace;
   font-size: 30px;
+  line-height: 30px;
   height: 80%;
   width: 80%;
 }

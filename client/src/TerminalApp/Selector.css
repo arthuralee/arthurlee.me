@@ -1,0 +1,13 @@
+a.selectionLink {
+  outline: none;
+}
+
+a.selectionLink:link {
+  text-decoration: none;
+  display: block;
+}
+
+a.selectionLink:link,
+a.selectionLink:visited {
+  color: #ccc;
+}

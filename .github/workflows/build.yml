@@ -30,6 +30,11 @@ jobs:
           yarn
           yarn hexo generate
           mv public ../build/blog
-      - name: Upload to S3
+      - name: Upload to S3 (staging)
+        if: ${{ github.ref == 'refs/heads/dev' }}
         run: |
           aws s3 sync ./build/ s3://staging.arthurlee.me
+      - name: Upload to S3 (prod)
+        if: ${{ github.ref == 'refs/heads/master' }}
+        run: |
+          aws s3 sync ./build/ s3://arthurlee.me

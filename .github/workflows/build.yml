@@ -1,0 +1,35 @@
+name: Build website
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: Build site
+        working-directory: ./client
+        run: |
+          yarn
+          yarn build
+          mv build ../
+      - name: Build blog
+        working-directory: ./blog
+        run: |
+          yarn
+          yarn hexo generate
+          mv public ../build/blog
+      - name: Upload to S3
+        run: |
+          aws s3 sync ./build/ s3://staging.arthurlee.me
